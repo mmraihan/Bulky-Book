@@ -28,8 +28,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Development\\Bulky-Book\\BulkyBook\\BulkyBook.Model\\BulkyBook.Model.csproj": {
-                "projectPath": "C:\\Development\\Bulky-Book\\BulkyBook\\BulkyBook.Model\\BulkyBook.Model.csproj"
+              "C:\\Development\\Bulky-Book\\BulkyBook\\BulkyBook.Model\\BulkyBook.Models.csproj": {
+                "projectPath": "C:\\Development\\Bulky-Book\\BulkyBook\\BulkyBook.Model\\BulkyBook.Models.csproj"
               },
               "C:\\Development\\Bulky-Book\\BulkyBook\\BulkyBook.Utility\\BulkyBook.Utility.csproj": {
                 "projectPath": "C:\\Development\\Bulky-Book\\BulkyBook\\BulkyBook.Utility\\BulkyBook.Utility.csproj"
@@ -83,12 +83,12 @@
         }
       }
     },
-    "C:\\Development\\Bulky-Book\\BulkyBook\\BulkyBook.Model\\BulkyBook.Model.csproj": {
+    "C:\\Development\\Bulky-Book\\BulkyBook\\BulkyBook.Model\\BulkyBook.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Development\\Bulky-Book\\BulkyBook\\BulkyBook.Model\\BulkyBook.Model.csproj",
-        "projectName": "BulkyBook.Model",
-        "projectPath": "C:\\Development\\Bulky-Book\\BulkyBook\\BulkyBook.Model\\BulkyBook.Model.csproj",
+        "projectUniqueName": "C:\\Development\\Bulky-Book\\BulkyBook\\BulkyBook.Model\\BulkyBook.Models.csproj",
+        "projectName": "BulkyBook.Models",
+        "projectPath": "C:\\Development\\Bulky-Book\\BulkyBook\\BulkyBook.Model\\BulkyBook.Models.csproj",
         "packagesPath": "C:\\Users\\Raihan\\.nuget\\packages\\",
         "outputPath": "C:\\Development\\Bulky-Book\\BulkyBook\\BulkyBook.Model\\obj\\",
         "projectStyle": "PackageReference",
@@ -218,8 +218,8 @@
               "C:\\Development\\Bulky-Book\\BulkyBook\\BulkyBook.DataAccess\\BulkyBook.DataAccess.csproj": {
                 "projectPath": "C:\\Development\\Bulky-Book\\BulkyBook\\BulkyBook.DataAccess\\BulkyBook.DataAccess.csproj"
               },
-              "C:\\Development\\Bulky-Book\\BulkyBook\\BulkyBook.Model\\BulkyBook.Model.csproj": {
-                "projectPath": "C:\\Development\\Bulky-Book\\BulkyBook\\BulkyBook.Model\\BulkyBook.Model.csproj"
+              "C:\\Development\\Bulky-Book\\BulkyBook\\BulkyBook.Model\\BulkyBook.Models.csproj": {
+                "projectPath": "C:\\Development\\Bulky-Book\\BulkyBook\\BulkyBook.Model\\BulkyBook.Models.csproj"
               },
               "C:\\Development\\Bulky-Book\\BulkyBook\\BulkyBook.Utility\\BulkyBook.Utility.csproj": {
                 "projectPath": "C:\\Development\\Bulky-Book\\BulkyBook\\BulkyBook.Utility\\BulkyBook.Utility.csproj"
@@ -256,6 +256,10 @@
             "Microsoft.EntityFrameworkCore.Tools": {
               "target": "Package",
               "version": "[3.1.22, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.5, )"
             }
           },
           "imports": [

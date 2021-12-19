@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v3.1": {
       "BulkyBook.DataAccess/1.0.0": {
         "dependencies": {
-          "BulkyBook.Model": "1.0.0",
+          "BulkyBook.Models": "1.0.0",
           "BulkyBook.Utility": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.22",
           "Microsoft.EntityFrameworkCore": "3.1.22",
@@ -1076,9 +1076,9 @@
           "System.Xml.XmlDocument": "4.3.0"
         }
       },
-      "BulkyBook.Model/1.0.0": {
+      "BulkyBook.Models/1.0.0": {
         "runtime": {
-          "BulkyBook.Model.dll": {}
+          "BulkyBook.Models.dll": {}
         }
       },
       "BulkyBook.Utility/1.0.0": {
@@ -1815,7 +1815,7 @@
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
-    "BulkyBook.Model/1.0.0": {
+    "BulkyBook.Models/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

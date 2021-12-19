@@ -8,8 +8,8 @@ C:\Development\Bulky-Book\BulkyBook\BulkyBook.DataAccess\obj\Debug\netcoreapp3.1
 C:\Development\Bulky-Book\BulkyBook\BulkyBook.DataAccess\obj\Debug\netcoreapp3.1\BulkyBook.DataAccess.dll
 C:\Development\Bulky-Book\BulkyBook\BulkyBook.DataAccess\obj\Debug\netcoreapp3.1\BulkyBook.DataAccess.pdb
 C:\Development\Bulky-Book\BulkyBook\BulkyBook.DataAccess\obj\Debug\netcoreapp3.1\BulkyBook.DataAccess.csproj.AssemblyReference.cache
-C:\Development\Bulky-Book\BulkyBook\BulkyBook.DataAccess\bin\Debug\netcoreapp3.1\BulkyBook.Model.dll
 C:\Development\Bulky-Book\BulkyBook\BulkyBook.DataAccess\bin\Debug\netcoreapp3.1\BulkyBook.Utility.dll
-C:\Development\Bulky-Book\BulkyBook\BulkyBook.DataAccess\bin\Debug\netcoreapp3.1\BulkyBook.Model.pdb
 C:\Development\Bulky-Book\BulkyBook\BulkyBook.DataAccess\bin\Debug\netcoreapp3.1\BulkyBook.Utility.pdb
 C:\Development\Bulky-Book\BulkyBook\BulkyBook.DataAccess\obj\Debug\netcoreapp3.1\BulkyBook.DataAccess.csproj.CopyComplete
+C:\Development\Bulky-Book\BulkyBook\BulkyBook.DataAccess\bin\Debug\netcoreapp3.1\BulkyBook.Models.dll
+C:\Development\Bulky-Book\BulkyBook\BulkyBook.DataAccess\bin\Debug\netcoreapp3.1\BulkyBook.Models.pdb
