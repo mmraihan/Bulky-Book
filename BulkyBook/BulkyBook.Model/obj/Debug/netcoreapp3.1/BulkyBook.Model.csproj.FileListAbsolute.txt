@@ -1,0 +1,10 @@
+C:\Development\Bulky-Book\BulkyBook\BulkyBook.Model\bin\Debug\netcoreapp3.1\BulkyBook.Model.deps.json
+C:\Development\Bulky-Book\BulkyBook\BulkyBook.Model\bin\Debug\netcoreapp3.1\BulkyBook.Model.dll
+C:\Development\Bulky-Book\BulkyBook\BulkyBook.Model\bin\Debug\netcoreapp3.1\BulkyBook.Model.pdb
+C:\Development\Bulky-Book\BulkyBook\BulkyBook.Model\obj\Debug\netcoreapp3.1\BulkyBook.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Development\Bulky-Book\BulkyBook\BulkyBook.Model\obj\Debug\netcoreapp3.1\BulkyBook.Model.AssemblyInfoInputs.cache
+C:\Development\Bulky-Book\BulkyBook\BulkyBook.Model\obj\Debug\netcoreapp3.1\BulkyBook.Model.AssemblyInfo.cs
+C:\Development\Bulky-Book\BulkyBook\BulkyBook.Model\obj\Debug\netcoreapp3.1\BulkyBook.Model.csproj.CoreCompileInputs.cache
+C:\Development\Bulky-Book\BulkyBook\BulkyBook.Model\obj\Debug\netcoreapp3.1\BulkyBook.Model.dll
+C:\Development\Bulky-Book\BulkyBook\BulkyBook.Model\obj\Debug\netcoreapp3.1\BulkyBook.Model.pdb
+C:\Development\Bulky-Book\BulkyBook\BulkyBook.Model\obj\Debug\netcoreapp3.1\BulkyBook.Model.csproj.AssemblyReference.cache

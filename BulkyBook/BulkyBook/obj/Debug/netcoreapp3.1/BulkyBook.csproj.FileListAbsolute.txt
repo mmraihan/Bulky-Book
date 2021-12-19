@@ -91,3 +91,9 @@ C:\Development\Bulky-Book\BulkyBook\BulkyBook\obj\Debug\netcoreapp3.1\BulkyBook.
 C:\Development\Bulky-Book\BulkyBook\BulkyBook\obj\Debug\netcoreapp3.1\BulkyBook.dll
 C:\Development\Bulky-Book\BulkyBook\BulkyBook\obj\Debug\netcoreapp3.1\BulkyBook.pdb
 C:\Development\Bulky-Book\BulkyBook\BulkyBook\obj\Debug\netcoreapp3.1\BulkyBook.genruntimeconfig.cache
+C:\Development\Bulky-Book\BulkyBook\BulkyBook\bin\Debug\netcoreapp3.1\BulkyBook.DataAccess.dll
+C:\Development\Bulky-Book\BulkyBook\BulkyBook\bin\Debug\netcoreapp3.1\BulkyBook.DataAccess.pdb
+C:\Development\Bulky-Book\BulkyBook\BulkyBook\bin\Debug\netcoreapp3.1\BulkyBook.Model.dll
+C:\Development\Bulky-Book\BulkyBook\BulkyBook\bin\Debug\netcoreapp3.1\BulkyBook.Model.pdb
+C:\Development\Bulky-Book\BulkyBook\BulkyBook\bin\Debug\netcoreapp3.1\BulkyBook.Utility.dll
+C:\Development\Bulky-Book\BulkyBook\BulkyBook\bin\Debug\netcoreapp3.1\BulkyBook.Utility.pdb
