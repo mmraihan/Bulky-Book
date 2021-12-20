@@ -64,7 +64,6 @@ namespace BulkyBook.Areas.Admin.Controllers
 
 
         [HttpDelete]
-
         public IActionResult Delete(int id)
         {
             var objFromDb = _unitOfWork.Category.Get(id);
@@ -79,7 +78,6 @@ namespace BulkyBook.Areas.Admin.Controllers
 
             return Json(new { success = true, message = "Delete Successfull" });
             
-
         }
         #region API Calls
 
