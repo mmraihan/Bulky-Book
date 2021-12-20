@@ -79,6 +79,8 @@ namespace BulkyBook.Areas.Admin.Controllers
             return Json(new { success = true, message = "Delete Successfull" });
             
         }
+
+
         #region API Calls
 
         [HttpGet]
