@@ -27,7 +27,6 @@ namespace BulkyBook.DataAccess.Repository
         {
             _db.Dispose();
         }
-
         public void Save()
         {
             _db.SaveChanges();
