@@ -180,3 +180,7 @@ C:\Development\Bulky-Book\BulkyBook\BulkyBook\obj\Debug\netcoreapp3.1\Razor\View
 C:\Development\Bulky-Book\BulkyBook\BulkyBook\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_EditAndBackToListButton.cshtml.g.cs
 C:\Development\Bulky-Book\BulkyBook\BulkyBook\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\CoverType\Index.cshtml.g.cs
 C:\Development\Bulky-Book\BulkyBook\BulkyBook\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\CoverType\Upsert.cshtml.g.cs
+C:\Development\Bulky-Book\BulkyBook\BulkyBook\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Development\Bulky-Book\BulkyBook\BulkyBook\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Development\Bulky-Book\BulkyBook\BulkyBook\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+C:\Development\Bulky-Book\BulkyBook\BulkyBook\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll

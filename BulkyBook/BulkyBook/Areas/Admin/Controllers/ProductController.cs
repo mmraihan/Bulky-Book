@@ -1,7 +1,9 @@
 ﻿using BulkyBook.DataAccess.Repository.IRepository;
 using BulkyBook.Models;
+using BulkyBook.Models.ViewModels;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,21 +27,38 @@ namespace BulkyBook.Areas.Admin.Controllers
             return View();
         }
 
-        public IActionResult Upsert(int ? id)
+        public IActionResult Upsert(int ? id) //Create and Edit Poduct
         {
-            Product product = new Product();
+            PrductVm prductVm = new PrductVm()
+            {
+                Product = new Product(),
+                CategoryList = _unitOfWork.Category.GetAll().Select(i => new SelectListItem {
+                    Text = i.Name,
+                    Value = i.Id.ToString()
+
+                }),
+                CoverTypeList = _unitOfWork.CoverType.GetAll().Select(c => new SelectListItem {
+                    Text = c.Name,
+                    Value = c.Id.ToString()
+
+                })
+
+            };
+
+
             if (id==null)
             {
                 //create
-                return View(product);
+                return View(prductVm);
             }
-            //this is for Edit
-            product = _unitOfWork.Product.Get(id.GetValueOrDefault());
-            if (product==null)
+
+            // Edit
+            prductVm.Product= _unitOfWork.Product.Get(id.GetValueOrDefault());
+            if (prductVm.Product ==null)
             {
                 return NotFound();
             }
-            return View(product);
+            return View(prductVm);
             
         }
 
@@ -51,8 +70,7 @@ namespace BulkyBook.Areas.Admin.Controllers
             {
                 if (product.Id==0)
                 {
-                    _unitOfWork.Product.Add(product);
-                    
+                    _unitOfWork.Product.Add(product);                  
                  
                 }
                 else
@@ -65,6 +83,17 @@ namespace BulkyBook.Areas.Admin.Controllers
             }
             return View(product);
         }
+
+
+        #region API Calls
+
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            var allObj = _unitOfWork.Product.GetAll(includeProperties :"Category, CoverType");
+            return Json(new { data = allObj });
+        }
+
 
 
         [HttpDelete]
@@ -85,14 +114,7 @@ namespace BulkyBook.Areas.Admin.Controllers
         }
 
 
-        #region API Calls
 
-        [HttpGet]
-        public IActionResult GetAll()
-        {
-            var allObj = _unitOfWork.Product.GetAll();
-            return Json(new {data=allObj });
-        }
 
 
         #endregion
