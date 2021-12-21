@@ -184,3 +184,4 @@ C:\Development\Bulky-Book\BulkyBook\BulkyBook\bin\Debug\netcoreapp3.1\Microsoft.
 C:\Development\Bulky-Book\BulkyBook\BulkyBook\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
 C:\Development\Bulky-Book\BulkyBook\BulkyBook\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
 C:\Development\Bulky-Book\BulkyBook\BulkyBook\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Development\Bulky-Book\BulkyBook\BulkyBook\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Product\Index.cshtml.g.cs

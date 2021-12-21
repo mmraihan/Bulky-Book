@@ -90,7 +90,7 @@ namespace BulkyBook.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
-            var allObj = _unitOfWork.Product.GetAll(includeProperties :"Category, CoverType");
+            var allObj = _unitOfWork.Product.GetAll(includeProperties:"Category,CoverType");
             return Json(new { data = allObj });
         }
 
@@ -112,9 +112,6 @@ namespace BulkyBook.Areas.Admin.Controllers
             return Json(new { success = true, message = "Delete Successfull" });
             
         }
-
-
-
 
 
         #endregion
