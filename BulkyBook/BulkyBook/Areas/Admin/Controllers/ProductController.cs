@@ -1,5 +1,6 @@
 ﻿using BulkyBook.DataAccess.Repository.IRepository;
 using BulkyBook.Models;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,12 +10,15 @@ using System.Threading.Tasks;
 namespace BulkyBook.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class CategoryController : Controller
+    public class ProductController : Controller
     {
-        private readonly IUnitOfWork _unitOfWork;
-        public CategoryController(IUnitOfWork unitOfWork)
+        private readonly  IUnitOfWork _unitOfWork;
+        private readonly IWebHostEnvironment _webHostEnvironment;// Upload images on the server in a folder inside
+
+        public ProductController(IUnitOfWork unitOfWork, IWebHostEnvironment webHostEnvironment)
         {
             _unitOfWork = unitOfWork;
+            _webHostEnvironment = webHostEnvironment;
         }
         public IActionResult Index()
         {          
@@ -23,57 +27,57 @@ namespace BulkyBook.Areas.Admin.Controllers
 
         public IActionResult Upsert(int ? id)
         {
-            Category category = new Category();
+            Product product = new Product();
             if (id==null)
             {
                 //create
-                return View(category);
+                return View(product);
             }
             //this is for Edit
-            category = _unitOfWork.Category.Get(id.GetValueOrDefault());
-            if (category==null)
+            product = _unitOfWork.Product.Get(id.GetValueOrDefault());
+            if (product==null)
             {
                 return NotFound();
             }
-            return View(category);
+            return View(product);
             
         }
 
         [HttpPost]
      [ValidateAntiForgeryToken]
-        public IActionResult Upsert(Category category)
+        public IActionResult Upsert(Product product)
         {
             if (ModelState.IsValid)
             {
-                if (category.Id==0)
+                if (product.Id==0)
                 {
-                    _unitOfWork.Category.Add(category);
+                    _unitOfWork.Product.Add(product);
                     
                  
                 }
                 else
                 {
-                    _unitOfWork.Category.Update(category);
+                    _unitOfWork.Product.Update(product);
                 }
                 _unitOfWork.Save();
                 return RedirectToAction(nameof(Index)); // Ignore Magic Strings
 
             }
-            return View(category);
+            return View(product);
         }
 
 
         [HttpDelete]
         public IActionResult Delete(int id)
         {
-            var objFromDb = _unitOfWork.Category.Get(id);
+            var objFromDb = _unitOfWork.Product.Get(id);
 
             if (objFromDb==null)
             {
                 return Json(new { success = false, message = "Error while deleting" });
             }
 
-            _unitOfWork.Category.Remove(objFromDb);
+            _unitOfWork.Product.Remove(objFromDb);
             _unitOfWork.Save();
 
             return Json(new { success = true, message = "Delete Successfull" });
@@ -86,7 +90,7 @@ namespace BulkyBook.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
-            var allObj = _unitOfWork.Category.GetAll();
+            var allObj = _unitOfWork.Product.GetAll();
             return Json(new {data=allObj });
         }
 
