@@ -187,8 +187,5 @@ namespace BulkyBook.Areas.Admin.Controllers
         #endregion
 
 
-
-
-
     }
 }
