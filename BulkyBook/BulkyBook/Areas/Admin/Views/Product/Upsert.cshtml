@@ -1,4 +1,4 @@
-﻿@model BulkyBook.Models.ViewModels.PrductVm
+﻿@model BulkyBook.Models.ViewModels.ProductVm
 
 @{
 
@@ -169,11 +169,20 @@
                 </div>
             </div>
         </div>
+
+        @*----------------------------Update Image------------------------------*@
+        @if (Model.Product.Id != 0)
+        {
+            <div class="col-3 offset-1 pt-4">
+                <img src="@Model.Product.ImageUrl" width="100%" style="border-radius:5px; border:1px solid #bbb9b9" />
+            </div>
+        }
     </div>
 </form>
 
 @section Scripts{
         <partial name="_ValidationScriptsPartial"/>
+@*------------------Tiny Description-----------------------------------*@
         <script src="https://cdn.tiny.cloud/1/kwif2ctan9zmzdnf9z5fosbgje2aydmuzgihoh3xx66sz6ik/tinymce/5/tinymce.min.js"
                 referrerpolicy="origin"></script>
     <script>
@@ -185,12 +194,14 @@
 
 
         function validateInput() {
-            if (document.getElementById("uploadBox").value = "") {
+            if (document.getElementById("uploadBox").value == "") {
                 swal("Error", "Please select an image", "error");
                 return false;
 
             }
             return true;
         }
+
+        @* ------------------Tiny Description End-----------------------------------*@
     </script>
     }

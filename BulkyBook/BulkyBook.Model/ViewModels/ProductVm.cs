@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BulkyBook.Models.ViewModels
 {
-    public class PrductVm 
+    public class ProductVm 
     {
         //Everyhing for creating and Editing a product
         public Product Product { get; set; }

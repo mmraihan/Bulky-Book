@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -29,7 +30,7 @@ namespace BulkyBook.Areas.Admin.Controllers
 
         public IActionResult Upsert(int ? id) //Create and Edit Poduct
         {
-            PrductVm prductVm = new PrductVm()
+            ProductVm productVm = new ProductVm()
             {
                 Product = new Product(),
                 CategoryList = _unitOfWork.Category.GetAll().Select(i => new SelectListItem {
@@ -49,39 +50,72 @@ namespace BulkyBook.Areas.Admin.Controllers
             if (id==null)
             {
                 //create
-                return View(prductVm);
+                return View(productVm);
             }
 
             // Edit
-            prductVm.Product= _unitOfWork.Product.Get(id.GetValueOrDefault());
-            if (prductVm.Product ==null)
+            productVm.Product= _unitOfWork.Product.Get(id.GetValueOrDefault());
+            if (productVm.Product ==null)
             {
                 return NotFound();
             }
-            return View(prductVm);
+            return View(productVm);
             
         }
 
         [HttpPost]
      [ValidateAntiForgeryToken]
-        public IActionResult Upsert(Product product)
+        public IActionResult Upsert(ProductVm productVm)
         {
             if (ModelState.IsValid)
             {
-                if (product.Id==0)
+                string webRootPath = _webHostEnvironment.WebRootPath;
+                var files = HttpContext.Request.Form.Files;  //retrieve all the files that we were uploaded
+                if (files.Count > 0) // File was uploaded
                 {
-                    _unitOfWork.Product.Add(product);                  
+                    string fileName = Guid.NewGuid().ToString();
+                    var uploads = Path.Combine(webRootPath, @"images\products");
+                    var extenstion = Path.GetExtension(files[0].FileName);
+                    if (productVm.Product.ImageUrl != null)
+                    {
+                        //Edit and we need to remove old images
+                        var imagePath = Path.Combine(webRootPath, productVm.Product.ImageUrl.TrimStart('\\'));
+                        if (System.IO.File.Exists(imagePath))
+                        {
+                            System.IO.File.Delete(imagePath);
+                        }
+                    }
+                    //Upload new File
+                    using (var fileStreams = new FileStream(Path.Combine(uploads, fileName + extenstion), FileMode.Create))
+                    {
+                        files[0].CopyTo(fileStreams);
+                    }
+                    productVm.Product.ImageUrl = @"\images\products\" + fileName + extenstion;
+                }
+                else
+                {
+                    //update when they do not change the image
+                    if (productVm.Product.Id !=0)
+                    {
+                        Product objFromDb = _unitOfWork.Product.Get(productVm.Product.Id);
+                        productVm.Product.ImageUrl = objFromDb.ImageUrl;
+                    }
+                }
+
+                if (productVm.Product.Id==0)
+                {
+                    _unitOfWork.Product.Add(productVm.Product);                  
                  
                 }
                 else
                 {
-                    _unitOfWork.Product.Update(product);
+                    _unitOfWork.Product.Update(productVm.Product);
                 }
                 _unitOfWork.Save();
                 return RedirectToAction(nameof(Index)); // Ignore Magic Strings
 
             }
-            return View(product);
+            return View(productVm);
         }
 
 
