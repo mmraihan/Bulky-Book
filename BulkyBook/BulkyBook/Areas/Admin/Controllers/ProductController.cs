@@ -79,6 +79,7 @@ namespace BulkyBook.Areas.Admin.Controllers
                     if (productVm.Product.ImageUrl != null)
                     {
                         //Edit and we need to remove old images
+                       
                         var imagePath = Path.Combine(webRootPath, productVm.Product.ImageUrl.TrimStart('\\'));
                         if (System.IO.File.Exists(imagePath))
                         {
@@ -115,7 +116,32 @@ namespace BulkyBook.Areas.Admin.Controllers
                 return RedirectToAction(nameof(Index)); // Ignore Magic Strings
 
             }
-            return View(productVm);
+
+            //Common Error Handling If every property contains................
+            else
+            {
+                productVm.CategoryList = _unitOfWork.Category.GetAll().Select(i => new SelectListItem
+                {
+                    Text = i.Name,
+                    Value = i.Id.ToString()
+
+                });
+                productVm.CoverTypeList = _unitOfWork.CoverType.GetAll().Select(c => new SelectListItem
+                {
+                    Text = c.Name,
+                    Value = c.Id.ToString()
+
+                });
+
+                if (productVm.Product.Id !=0)
+                {
+                    productVm.Product = _unitOfWork.Product.Get(productVm.Product.Id);
+                }
+            };
+            // ---------Common Error handling Ends-----------------------
+            return View(productVm); // If every poperty contains null and If There is no any Client side validation in JS then it will show an error 
+                                    // (InvalidOperationException: The ViewData item that has the key 'Product.CategoryId' is
+                                    // of type 'System.Int32' but must be of type 'IEnumerable<SelectListItem>'.)
         }
 
 
@@ -138,6 +164,14 @@ namespace BulkyBook.Areas.Admin.Controllers
             if (objFromDb==null)
             {
                 return Json(new { success = false, message = "Error while deleting" });
+            }
+
+            //-------Image Delete From wwwroot folder
+            string webRootPath = _webHostEnvironment.WebRootPath;
+            var imagePath = Path.Combine(webRootPath, objFromDb.ImageUrl.TrimStart('\\'));
+            if (System.IO.File.Exists(imagePath))
+            {
+                System.IO.File.Delete(imagePath);
             }
 
             _unitOfWork.Product.Remove(objFromDb);
