@@ -15,6 +15,11 @@ namespace BulkyBook.Models
         public string City { get; set; }
         public string State { get; set; }
         public string PostalCode { get; set; }
+        public int? CompanyId { get; set; } //Nullabe for individual users, They don't need any company
+
+        [ForeignKey("CompanyId")]
+        public Company Company { get; set; }
+
 
         [NotMapped]
         public string Role { get; set; }
