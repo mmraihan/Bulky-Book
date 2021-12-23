@@ -17,13 +17,19 @@ namespace BulkyBook.DataAccess.Repository
         }
         public void Update(Company company)
         {
-            var objFromDb = _db.Categories.FirstOrDefault(c => c.Id == company.Id);
-            if (objFromDb !=null)
-            {
-                objFromDb.Name = company.Name;
-            }
+
+            _db.Update(company);
+
+            #region Approach 2
+            //var objFromDb = _db.Companies.FirstOrDefault(c => c.Id == company.Id);
+            //if (objFromDb !=null)
+            //{
+            //    objFromDb.Name = company.Name;
+            //}
+            #endregion
+
         }
 
-      
+
     }
 }
