@@ -9,12 +9,28 @@ $(document).ready(function () {
 function loadDataTable() {
     dataTable = $("#tblData").DataTable({
         "ajax": {
-            "url" : "/Admin/Category/GetAll"
+            "url" : "/Admin/Company/GetAll"
         },
         "columns": [
-            { "data": "name", "width": "60%" }, // -----camelCase
-          
-          
+            { "data": "name", "width": "15%" }, //----camelCase
+            { "data": "streetAddress", "width": "15%" },
+            { "data": "city", "width": "10%" },
+            { "data": "state", "width": "10%" },
+            { "data": "postalCode", "width": "15%" },
+            { "data": "phoneNumber", "width": "15%" },
+            {
+                "data": "isAuthorizedCompany",
+                "render": function (data) {
+                    if (data) {
+                        return `<input type="checkbox" disabled checked />`
+                    }
+                    else {
+                        return `<input type="checkbox" disabled/>`
+                    }
+                }, "width": "10%"          
+            },
+
+
             {
                 "data": "id",
                 "render": function (data) {
