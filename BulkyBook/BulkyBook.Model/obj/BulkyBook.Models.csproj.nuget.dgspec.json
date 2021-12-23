@@ -40,13 +40,9 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
-            "Microsoft.AspNetCore.Mvc.ViewFeatures": {
+            "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
-              "version": "[2.2.0, )"
-            },
-            "Microsoft.Extensions.Identity.Stores": {
-              "target": "Package",
-              "version": "[3.1.22, )"
+              "version": "[3.1.0, )"
             }
           },
           "imports": [
