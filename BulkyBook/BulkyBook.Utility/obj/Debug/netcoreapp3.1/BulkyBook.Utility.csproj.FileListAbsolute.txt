@@ -7,3 +7,4 @@ C:\Development\Bulky-Book\BulkyBook\BulkyBook.Utility\obj\Debug\netcoreapp3.1\Bu
 C:\Development\Bulky-Book\BulkyBook\BulkyBook.Utility\obj\Debug\netcoreapp3.1\BulkyBook.Utility.csproj.CoreCompileInputs.cache
 C:\Development\Bulky-Book\BulkyBook\BulkyBook.Utility\obj\Debug\netcoreapp3.1\BulkyBook.Utility.dll
 C:\Development\Bulky-Book\BulkyBook\BulkyBook.Utility\obj\Debug\netcoreapp3.1\BulkyBook.Utility.pdb
+C:\Development\Bulky-Book\BulkyBook\BulkyBook.Utility\obj\Debug\netcoreapp3.1\BulkyBook.Utility.csproj.AssemblyReference.cache
