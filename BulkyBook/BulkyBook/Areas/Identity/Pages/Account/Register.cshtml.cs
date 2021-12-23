@@ -60,6 +60,17 @@ namespace BulkyBook.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
+
+            [Required]
+            public string Name { get; set; }
+            public string StreetAddress { get; set; }
+            public string City { get; set; }
+            public string State { get; set; }
+            public string PostalCode { get; set; }
+            public string PhoneNumber { get; set; }
+            public int? CompanyId { get; set; } //Nullabe for individual users, They don't need any company
+            public string Role { get; set; }
+
         }
 
         public async Task OnGetAsync(string returnUrl = null)
