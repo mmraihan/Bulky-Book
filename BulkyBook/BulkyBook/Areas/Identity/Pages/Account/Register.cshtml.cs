@@ -162,12 +162,21 @@ namespace BulkyBook.Areas.Identity.Pages.Account
                     }
 
                     //-------By Default Registration (Admin Role)-----------
-                    await _userManager.AddToRoleAsync(user, SD.Role_Admin);
+                    // await _userManager.AddToRoleAsync(user, SD.Role_Admin);
 
+                    if (user.Role==null)
+                    {
+                        await _userManager.AddToRoleAsync(user, SD.Role_User_Indi);
+                    }
+                    else
+                    {
+                        if (user.CompanyId>0)
+                        {
+                            await _userManager.AddToRoleAsync(user, SD.Role_User_Comp);
+                        }
 
-
-
-
+                        await _userManager.AddToRoleAsync(user, user.Role);
+                    }
 
 
 
@@ -190,8 +199,17 @@ namespace BulkyBook.Areas.Identity.Pages.Account
                     }
                     else
                     {
-                        await _signInManager.SignInAsync(user, isPersistent: false);
-                        return LocalRedirect(returnUrl);
+                        if (user.Role==null)
+                        {
+                            await _signInManager.SignInAsync(user, isPersistent: false);
+                            return LocalRedirect(returnUrl);
+                        }
+                        else
+                        {
+                            //Admin Admin registers a new user
+                            return RedirectToAction("Index", "User", new { Area = "Admin" });
+                        }
+                        
                     }
                 }
                 foreach (var error in result.Errors)
