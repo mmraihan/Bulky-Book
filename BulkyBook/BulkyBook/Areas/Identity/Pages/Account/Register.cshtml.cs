@@ -209,7 +209,7 @@ namespace BulkyBook.Areas.Identity.Pages.Account
                             //Admin Admin registers a new user
                             return RedirectToAction("Index", "User", new { Area = "Admin" });
                         }
-                        
+                         
                     }
                 }
                 foreach (var error in result.Errors)
