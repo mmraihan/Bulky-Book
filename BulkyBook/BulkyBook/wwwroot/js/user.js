@@ -53,21 +53,13 @@ function loadDataTable() {
     });
 }
 
-function Delete(url) {
-    swal({
-
-        title: "Are you sure you want to Delete?",
-        text: "You will not be able to restore the data!",
-        icon: "warning",
-        buttons: true,
-        dangerMode: true
-
-    }).then((willDelete) => {
-
-        if (willDelete) {
+function LockUnlock(id) {
+   
             $.ajax({
-                type: "DELETE",
-                url: url,
+                type: "POST",
+                url: '/Admin/User/LockUnlock',
+                data: JSON.stringify(id),
+                contentType: "application/json",
                 success: function (data) {
                     if (data.success) {
                         toastr.success(data.message);
@@ -78,6 +70,5 @@ function Delete(url) {
                     }
                 }
             });
-        }
-    });
+   
 }
