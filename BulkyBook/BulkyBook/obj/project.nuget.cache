@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ySkHiXI7G+9pANrhM40RL0GdDbhqgf66w1NB0Xr7f+bWsnn0FZeuo9ccROQTck3i3uxSAdjFAM86jf8Z5kxPkg==",
+  "dgSpecHash": "kQ7lofhl02cMw0lSFIhrvP7DecO0fpTFJd1PUpup76MxVbNg0IoZAfV2BFSjvLdZNztid8K0urdoS4raL/2hmw==",
   "success": true,
   "projectFilePath": "C:\\Development\\Bulky-Book\\BulkyBook\\BulkyBook\\BulkyBook.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,8 @@
     "C:\\Users\\Raihan\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Raihan\\.nuget\\packages\\microsoft.aspnetcore.authentication.cookies\\2.2.0\\microsoft.aspnetcore.authentication.cookies.2.2.0.nupkg.sha512",
     "C:\\Users\\Raihan\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",
+    "C:\\Users\\Raihan\\.nuget\\packages\\microsoft.aspnetcore.authentication.facebook\\3.1.0\\microsoft.aspnetcore.authentication.facebook.3.1.0.nupkg.sha512",
+    "C:\\Users\\Raihan\\.nuget\\packages\\microsoft.aspnetcore.authentication.google\\3.1.0\\microsoft.aspnetcore.authentication.google.3.1.0.nupkg.sha512",
     "C:\\Users\\Raihan\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.21\\microsoft.aspnetcore.cryptography.internal.3.1.21.nupkg.sha512",
     "C:\\Users\\Raihan\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.21\\microsoft.aspnetcore.cryptography.keyderivation.3.1.21.nupkg.sha512",
     "C:\\Users\\Raihan\\.nuget\\packages\\microsoft.aspnetcore.dataprotection\\2.2.0\\microsoft.aspnetcore.dataprotection.2.2.0.nupkg.sha512",

@@ -489,3 +489,5 @@ C:\Development\Bulky-Book\BulkyBook\BulkyBook\obj\Debug\netcoreapp3.1\Razor\Area
 C:\Development\Bulky-Book\BulkyBook\BulkyBook\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
 C:\Development\Bulky-Book\BulkyBook\BulkyBook\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 C:\Development\Bulky-Book\BulkyBook\BulkyBook\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\User\Index.cshtml.g.cs
+C:\Development\Bulky-Book\BulkyBook\BulkyBook\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.Facebook.dll
+C:\Development\Bulky-Book\BulkyBook\BulkyBook\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.Google.dll
