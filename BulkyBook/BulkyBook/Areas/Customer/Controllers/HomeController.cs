@@ -70,8 +70,20 @@ namespace BulkyBook.Customer.Controllers
 
                 if (cartFromDb==null)
                 {
-                    //No records exists in db for that user, we need to add product
+                    //No records exists in db for that user, we need to add shoppingCart
+
+                    _unitOfWork.ShoppingCart.Add(CartObject);
+
                 }
+                else
+                {
+                    cartFromDb.Count += CartObject.Count; //Whenever we addtoCart in multipletimes
+                    _unitOfWork.ShoppingCart.Update(cartFromDb); //if we don't write, it will also work, because EF tracks the data
+                }
+
+                _unitOfWork.Save();
+
+                return RedirectToAction(nameof(Index));
 
 
             }
