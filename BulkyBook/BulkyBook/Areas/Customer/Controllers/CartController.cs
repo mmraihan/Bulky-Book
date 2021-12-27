@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 
 namespace BulkyBook.Areas.Customer.Controllers
 {
+    [Area("Customer")]
     public class CartController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -38,7 +39,7 @@ namespace BulkyBook.Areas.Customer.Controllers
             ShoppingCartVM = new ShoppingCartVM()
             {
                 OrderHeader = new Models.OrderHeader(),
-                ListCart = _unitOfWork.ShoppingCart.GetAll(c => c.ApplicationUserId == claim.Value, includeProperties:"Company")
+                ListCart = _unitOfWork.ShoppingCart.GetAll(c => c.ApplicationUserId == claim.Value, includeProperties:"Product")
 
 
             };
@@ -61,8 +62,7 @@ namespace BulkyBook.Areas.Customer.Controllers
                             
             }
 
-
-            return View(ShoppingCartVM);
+            return View(ShoppingCartVM); 
         }
         
     
