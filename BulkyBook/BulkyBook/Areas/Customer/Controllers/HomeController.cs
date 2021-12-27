@@ -31,8 +31,30 @@ namespace BulkyBook.Customer.Controllers
         public IActionResult Index()
         {
             var productList = _unitOfWork.Product.GetAll(includeProperties:"Category,CoverType");
+         
+
+            #region Shopping Cart Session
+            //If the user is logged in, retrive the shopping cart from DB, if anythong exist, then add to the session
+
+            var claimsIdentity = (ClaimsIdentity)User.Identity; //--Find out the Id of the logged in user
+            var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier); //--Find out the Id of the logged in user
+
+            if (claim !=null)// user logged in
+            {
+                var count = _unitOfWork.ShoppingCart.GetAll(c => c.ApplicationUserId == claim.Value)
+                   .ToList().Count();
+
+                //Deafult Session
+                HttpContext.Session.SetInt32(SD.ssShoppingCart, count);
+
+            }
+
+            #endregion
+
             return View(productList);
         }
+
+
 
         public IActionResult Details(int id)
         {
@@ -61,8 +83,8 @@ namespace BulkyBook.Customer.Controllers
             {
                 //Theb we will add to cart
 
-                var claimsIdentity = (ClaimsIdentity)User.Identity;
-                var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
+                var claimsIdentity = (ClaimsIdentity)User.Identity; //--Find out the Id of the logged in user
+                var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier); //--Find out the Id of the logged in user
                 CartObject.ApplicationUserId = claim.Value;
 
                 ShoppingCart cartFromDb = _unitOfWork.ShoppingCart.GetFirstOrDefault(
@@ -87,7 +109,7 @@ namespace BulkyBook.Customer.Controllers
 
                 //--In session we will store number of items in the shopping cart---
 
-                #region In session we will store number of items in the shopping car
+                #region In session we will store number of items in the shopping cart
 
                 var count = _unitOfWork.ShoppingCart.GetAll(c => c.ApplicationUserId == CartObject.ApplicationUserId)
                    .ToList().Count();

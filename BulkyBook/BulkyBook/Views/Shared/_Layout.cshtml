@@ -1,4 +1,6 @@
 ﻿@using BulkyBook.Utility
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
 
 <!DOCTYPE html>
 <html lang="en">
@@ -65,7 +67,30 @@
 
                         @*------------------Ends Authorization------------*@
 
+                        @*------------------Session Shopping Cart------------*@
 
+                        @if (HttpContextAccessor.HttpContext.Session.GetInt32(SD.ssShoppingCart) != null)
+                        {
+                            <li style="color:white;">
+                                <a asp-area="Customer" asp-controller="Cart" asp-action="Index" class="nav-link">
+                                    @{
+                                        var count = HttpContextAccessor.HttpContext.Session.GetInt32(SD.ssShoppingCart);
+                                    }
+                                    <i class="fas fa-shopping-cart"></i> &nbsp; (@count)
+                                </a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li style="color:white;">
+                                <a href="#" class="nav-link">
+                                    <i class="fas fa-shopping-cart"></i> &nbsp; (0)
+                                </a>
+                            </li>
+                        }
+
+
+                        @*------------------End Session Shopping Cart------------*@
                     </ul>
                 </div>
             </div>
@@ -91,7 +116,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://kit.fontawesome.com/e19c476714.js"></script>
-    
+
     @RenderSection("Scripts", required: false)
 </body>
 </html>
