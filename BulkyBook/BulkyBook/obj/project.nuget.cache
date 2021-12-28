@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "kQ7lofhl02cMw0lSFIhrvP7DecO0fpTFJd1PUpup76MxVbNg0IoZAfV2BFSjvLdZNztid8K0urdoS4raL/2hmw==",
+  "dgSpecHash": "IUC3gjuz8QPnRnUcMB3cmz5Zpnj65XrSypP3RMNak8GWiLD56t86D2SUXIdQG6+agIcFA7NIUeEdObXeQPwDLg==",
   "success": true,
   "projectFilePath": "C:\\Development\\Bulky-Book\\BulkyBook\\BulkyBook\\BulkyBook.csproj",
   "expectedPackageFiles": [
@@ -111,6 +111,7 @@
     "C:\\Users\\Raihan\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Raihan\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\Raihan\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\Raihan\\.nuget\\packages\\stripe.net\\34.11.0\\stripe.net.34.11.0.nupkg.sha512",
     "C:\\Users\\Raihan\\.nuget\\packages\\system.appcontext\\4.3.0\\system.appcontext.4.3.0.nupkg.sha512",
     "C:\\Users\\Raihan\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\Raihan\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
