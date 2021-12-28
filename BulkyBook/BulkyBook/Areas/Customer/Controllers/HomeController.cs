@@ -56,13 +56,13 @@ namespace BulkyBook.Customer.Controllers
 
 
 
-        public IActionResult Details(int id)
+        public IActionResult Details(int id) 
         {
             var productFromDb = _unitOfWork.Product
                 .GetFirstOrDefault(u => u.Id == id, includeProperties: "Category,CoverType");
          
 
-            ShoppingCart cartObj = new ShoppingCart()
+            ShoppingCart cartObj = new ShoppingCart()  //we'll have a option to add the item to shopping cart, so we can use our shopiing cart object 
             {
                 Product=productFromDb,
                 ProductId=productFromDb.Id
@@ -81,16 +81,17 @@ namespace BulkyBook.Customer.Controllers
             CartObject.Id = 0;
             if (ModelState.IsValid)
             {
-                //Theb we will add to cart
+                //Then we will add to cart
 
                 var claimsIdentity = (ClaimsIdentity)User.Identity; //--Find out the Id of the logged in user
                 var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier); //--Find out the Id of the logged in user
                 CartObject.ApplicationUserId = claim.Value;
 
+
                 ShoppingCart cartFromDb = _unitOfWork.ShoppingCart.GetFirstOrDefault(
                     u => u.ApplicationUserId == CartObject.ApplicationUserId && u.ProductId==CartObject.ProductId,
                     includeProperties:("Product")
-                    );
+                    ); //Based on loged user id , retrive data from shopingcart db
 
                 if (cartFromDb==null)
                 {
@@ -130,7 +131,7 @@ namespace BulkyBook.Customer.Controllers
             }
             else //Same prodcut will return back
             {
-                var productFromDb = _unitOfWork.Product
+             var productFromDb = _unitOfWork.Product
              .GetFirstOrDefault(u => u.Id == CartObject.ProductId, includeProperties: "Category,CoverType");
 
 

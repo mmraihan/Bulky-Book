@@ -48,7 +48,7 @@ namespace BulkyBook.Utility
         }
 
 
-        //----------Custom Method
+        //----------Custom Method for converting
         public static string ConvertToRawHtml(string source)
         {
             char[] array = new char[source.Length];

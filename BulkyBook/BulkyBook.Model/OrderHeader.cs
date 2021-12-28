@@ -6,7 +6,7 @@ using System.Text;
 
 namespace BulkyBook.Models
 {
-   public class OrderHeader //Generic information about order
+   public class OrderHeader //Generic information about order, contains an overview of what we have for complete order
     {
         [Key]
         public int Id { get; set; }

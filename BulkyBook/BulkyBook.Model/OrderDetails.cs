@@ -6,7 +6,7 @@ using System.Text;
 
 namespace BulkyBook.Models
 {
-   public class OrderDetails
+   public class OrderDetails //Contains items that what are all the items in that order
     {
         [Key]
         public int Id { get; set; }

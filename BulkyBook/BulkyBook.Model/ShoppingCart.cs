@@ -6,7 +6,7 @@ using System.Text;
 
 namespace BulkyBook.Models
 {
-   public class ShoppingCart
+   public class ShoppingCart //Products to be added to shoppping cart, cart to be saved in DB
     {
         public ShoppingCart()
         {
@@ -15,7 +15,7 @@ namespace BulkyBook.Models
 
         [Key]
         public int Id { get; set; }
-        public string ApplicationUserId { get; set; }
+        public string ApplicationUserId { get; set; } //what user has many items added in the shopping cart
         [ForeignKey("ApplicationUserId")]
         public ApplicationUser ApplicationUser { get; set; }
 
@@ -28,7 +28,7 @@ namespace BulkyBook.Models
         public int Count { get; set; }
 
         [NotMapped]
-        public double Price { get; set; }
+        public double Price { get; set; } //based on count selected, price will be loaded to UI
 
     }
 }
