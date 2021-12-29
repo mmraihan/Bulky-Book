@@ -495,3 +495,4 @@ C:\Development\Bulky-Book\BulkyBook\BulkyBook\obj\Debug\netcoreapp3.1\Razor\Area
 C:\Development\Bulky-Book\BulkyBook\BulkyBook\obj\Debug\netcoreapp3.1\Razor\Areas\Customer\Views\Cart\Index.cshtml.g.cs
 C:\Development\Bulky-Book\BulkyBook\BulkyBook\obj\Debug\netcoreapp3.1\Razor\Areas\Customer\Views\Cart\Summary.cshtml.g.cs
 C:\Development\Bulky-Book\BulkyBook\BulkyBook\bin\Debug\netcoreapp3.1\Stripe.net.dll
+C:\Development\Bulky-Book\BulkyBook\BulkyBook\obj\Debug\netcoreapp3.1\Razor\Areas\Customer\Views\Cart\OrderConfirmation.cshtml.g.cs

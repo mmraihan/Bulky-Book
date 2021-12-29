@@ -21,6 +21,8 @@ namespace BulkyBook.Areas.Customer.Controllers
         private readonly IEmailSender _emailSender;
         private readonly UserManager<IdentityUser> _userManager;
 
+        [BindProperty]
+
         public ShoppingCartVM ShoppingCartVM { get; set; }
 
         public CartController(IUnitOfWork unitOfWork, IEmailSender emailSender, UserManager<IdentityUser> userManager)
@@ -153,7 +155,7 @@ namespace BulkyBook.Areas.Customer.Controllers
         [HttpPost]
         [ActionName("Summary")]
         [ValidateAntiForgeryToken]
-        public IActionResult SummaryPost()
+        public IActionResult SummaryPost(ShoppingCartVM shoppingCartVM)
         {
             var claimsIdentity = (ClaimsIdentity)User.Identity;
             var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
@@ -184,6 +186,7 @@ namespace BulkyBook.Areas.Customer.Controllers
             //if we have 100 items it will add 100 order details --(Add them to db)
             foreach (var item in ShoppingCartVM.ListCart)
             {
+                item.Price = SD.GetPriceBasedOnQuantity(item.Count, item.Product.Price, item.Product.Price50, item.Product.Price100);
                 OrderDetails orderDetails = new OrderDetails()
                 {
                     ProductId = item.ProductId,
@@ -198,10 +201,20 @@ namespace BulkyBook.Areas.Customer.Controllers
                 _unitOfWork.Save();
             }
             _unitOfWork.ShoppingCart.RemoveRange(ShoppingCartVM.ListCart);
+            _unitOfWork.Save();
             HttpContext.Session.SetInt32(SD.ssShoppingCart, 0);
 
             return RedirectToAction("OrderConfirmation", "Cart", new { id = ShoppingCartVM.OrderHeader.Id });
 
         }
+
+        public IActionResult OrderConfirmation(int id)
+        {
+            return View(id);
+        }
     }
+
+
+
+
 }
