@@ -182,7 +182,7 @@ namespace BulkyBook.Areas.Customer.Controllers
 
             //
 
-            List<OrderDetails> orderDetailsList = new List<OrderDetails>();
+      
 
             //if we have 100 items it will add 100 order details --(Add them to db)
             foreach (var item in ShoppingCartVM.ListCart)
