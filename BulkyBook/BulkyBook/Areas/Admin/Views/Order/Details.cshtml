@@ -129,7 +129,7 @@
                                 <div class="col-9">
                                     @if (User.IsInRole(SD.Role_Admin) || User.IsInRole(SD.Role_Employee))
                                     {
-                                        <input asp-for="OrderHeader.Carrier" type="text" class="form-control" />
+                                        <input asp-for="OrderHeader.Carrier" id="carrier" type="text" class="form-control" />
                                     }
                                     else
                                     {
@@ -142,7 +142,7 @@
                                 <div class="col-9">
                                     @if (User.IsInRole(SD.Role_Admin) || User.IsInRole(SD.Role_Employee))
                                     {
-                                        <input asp-for="OrderHeader.TrackingNumber" type="text" class="form-control" />
+                                        <input asp-for="OrderHeader.TrackingNumber" id="trackingNumber" type="text" class="form-control" />
                                     }
                                     else
                                     {
@@ -255,6 +255,17 @@
                             {
                                 <label class="btn btn-primary form-control">@Model.OrderHeader.OrderStatus</label>
                             }
+
+                            @if (Model.OrderHeader.OrderStatus != SD.StatusRefunded &&
+                        Model.OrderHeader.OrderStatus != SD.StatusCancelled &&
+                        (User.IsInRole(SD.Role_Admin) || User.IsInRole(SD.Role_Employee)))
+                            {
+                                <div class="pt-2">
+                                    <a asp-action="CancelOrder" asp-route-id="@Model.OrderHeader.Id"
+                                       class="btn btn-danger form-control">Cancel Order</a>
+                                </div>
+                            }
+
                         </div>
                     </div>
                 </div>
@@ -262,3 +273,42 @@
         </div>
     </div>
 </form>
+
+@section Scripts{ 
+    <script>
+        function validateInput() {
+            var tracking = document.getElementById("trackingNumber").value;
+            var carrier = document.getElementById("carrier").value;
+            if (tracking.toString() == '') {
+                swal("Error", "Please enter tracking number", "error")
+                return false;
+            }
+            else {
+                if (carrier.toString() == '') {
+                    swal("Error", "Please enter carrier", "error")
+                    return false;
+                }
+                else {
+                    return true;
+                }
+            }
+        }
+
+
+        $(document).ready(function () {
+            var shippingDate = document.getElementById("shippingDate");
+
+            if (shippingDate.value == '01-Jan-01') {
+                shippingDate.value = "";
+            }
+
+            var paymentDate = document.getElementById("paymentDate");
+
+            if (paymentDate.value == '01-Jan-01') {
+                paymentDate.value = "";
+            }
+
+        });
+
+    </script>
+}
