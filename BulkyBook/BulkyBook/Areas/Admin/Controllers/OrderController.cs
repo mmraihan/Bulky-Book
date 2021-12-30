@@ -48,9 +48,10 @@ namespace BulkyBook.Areas.Admin.Controllers
                     includeProperties: "ApplicationUser");
             }
 
-            
 
-            orderHeaderList = _unitOfWork.OrderHeader.GetAll(includeProperties:"ApplicationUser");
+
+            //orderHeaderList = _unitOfWork.OrderHeader.GetAll(includeProperties:"ApplicationUser");
+
 
 
             switch (status)
@@ -59,20 +60,19 @@ namespace BulkyBook.Areas.Admin.Controllers
                     orderHeaderList = orderHeaderList.Where(o => o.PaymentStatus == SD.PaymentStatusDelayedPayment);
                     break;
                 case "inprocess":
-                    orderHeaderList = orderHeaderList.Where(o => o.OrderStatus==SD.StatusApproved ||
-                                                            o.OrderStatus==SD.StatusInProcess||
-                                                            o.OrderStatus==SD.StatusPending);
+                    orderHeaderList = orderHeaderList.Where(o => o.OrderStatus == SD.StatusApproved ||
+                                                            o.OrderStatus == SD.StatusInProcess ||
+                                                            o.OrderStatus == SD.StatusPending);
                     break;
                 case "completed":
                     orderHeaderList = orderHeaderList.Where(o => o.OrderStatus == SD.StatusShipped);
                     break;
-
                 case "rejected":
                     orderHeaderList = orderHeaderList.Where(o => o.OrderStatus == SD.StatusCancelled ||
                                                             o.OrderStatus == SD.StatusRefunded ||
                                                             o.OrderStatus == SD.PaymentStatusRejected);
                     break;
-                default:                  
+                default:
                     break;
             }
 
