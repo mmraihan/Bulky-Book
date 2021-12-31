@@ -256,15 +256,15 @@
                                 <label class="btn btn-primary form-control">@Model.OrderHeader.OrderStatus</label>
                             }
 
-                            @if (Model.OrderHeader.OrderStatus != SD.StatusRefunded &&
+                            @*@if (Model.OrderHeader.OrderStatus != SD.StatusRefunded &&
                         Model.OrderHeader.OrderStatus != SD.StatusCancelled &&
                         (User.IsInRole(SD.Role_Admin) || User.IsInRole(SD.Role_Employee)))
                             {
                                 <div class="pt-2">
-                                    <a asp-action="CancelOrder" asp-route-id="@Model.OrderHeader.Id"
-                                       class="btn btn-danger form-control">Cancel Order</a>
+                                    <a ty asp-action="CancelOrder" asp-route-id="@Model.OrderHeader.Id"
+                                       class="btn btn-danger form-control" >Cancel Order</a>
                                 </div>
-                            }
+                            }*@
 
                         </div>
                     </div>
