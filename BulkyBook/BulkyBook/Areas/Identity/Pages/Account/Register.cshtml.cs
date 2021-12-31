@@ -98,13 +98,23 @@ namespace BulkyBook.Areas.Identity.Pages.Account
                     Value=i.Id.ToString()
                 }),
 
-                RoleList = _roleManager.Roles.Where(r=>r.Name!=SD.Role_User_Indi).Select(x=>x.Name).Select(i=>new SelectListItem { 
+                RoleList = _roleManager.Roles.Where(r=>r.Name!=SD.Role_User_Indi).Select(x=>x.Name).Select(i=>new SelectListItem
+                { 
                     Text=i,
                     Value=i
 
                 })
 
             };
+            if (User.IsInRole(SD.Role_Employee))
+            {
+                Input.RoleList = _roleManager.Roles.Where(r => r.Name == SD.Role_User_Comp).Select(x => x.Name).Select(i => new SelectListItem
+                {
+                    Text = i,
+                    Value = i
+
+                });
+            }
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
         }
 
