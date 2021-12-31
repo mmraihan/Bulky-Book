@@ -8,7 +8,7 @@ using System.Text;
 
 namespace BulkyBook.DataAccess.Repository
 {
-    class CategoryRepository : Repository<Category>, ICategoryRepository
+    class CategoryRepository : RepositoryAsync<Category>, ICategoryRepository
     {
         private readonly ApplicationDbContext _db;
         public CategoryRepository(ApplicationDbContext db) : base(db)

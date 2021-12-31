@@ -31,12 +31,13 @@ namespace BulkyBook.Areas.Admin.Controllers
             return View();
         }
 
-        public IActionResult Upsert(int ? id) //Create and Edit Poduct
+        public async Task<IActionResult> Upsert(int ? id) //Create and Edit Poduct
         {
+            IEnumerable<Category> Catlist = await _unitOfWork.Category.GetAllAsync();
             ProductVm productVm = new ProductVm()
             {
                 Product = new Product(),
-                CategoryList = _unitOfWork.Category.GetAll().Select(i => new SelectListItem {
+                CategoryList = Catlist.Select(i => new SelectListItem {
                     Text = i.Name,
                     Value = i.Id.ToString()
 
@@ -68,7 +69,7 @@ namespace BulkyBook.Areas.Admin.Controllers
 
         [HttpPost]
      [ValidateAntiForgeryToken]
-        public IActionResult Upsert(ProductVm productVm)
+        public async Task <IActionResult> Upsert(ProductVm productVm)
         {
             if (ModelState.IsValid)
             {
@@ -123,7 +124,8 @@ namespace BulkyBook.Areas.Admin.Controllers
             //Common Error Handling If every property contains................
             else
             {
-                productVm.CategoryList = _unitOfWork.Category.GetAll().Select(i => new SelectListItem
+                IEnumerable<Category> Catlist = await _unitOfWork.Category.GetAllAsync();
+                productVm.CategoryList = Catlist.Select(i => new SelectListItem
                 {
                     Text = i.Name,
                     Value = i.Id.ToString()
