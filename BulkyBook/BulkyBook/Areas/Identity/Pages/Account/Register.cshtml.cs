@@ -151,25 +151,25 @@ namespace BulkyBook.Areas.Identity.Pages.Account
 
                     //-----------------Assigning roles------------
 
-                    if (!await _roleManager.RoleExistsAsync(SD.Role_Admin)) //--If the role does not exist inside db, then it will create
-                    {
-                        await _roleManager.CreateAsync(new IdentityRole(SD.Role_Admin));
-                    }
+                    //if (!await _roleManager.RoleExistsAsync(SD.Role_Admin)) //--If the role does not exist inside db, then it will create
+                    //{
+                    //    await _roleManager.CreateAsync(new IdentityRole(SD.Role_Admin));
+                    //}
 
-                    if (!await _roleManager.RoleExistsAsync(SD.Role_Employee)) //--If the role does not exist inside db, then it will create
-                    {
-                        await _roleManager.CreateAsync(new IdentityRole(SD.Role_Employee));
-                    }
+                    //if (!await _roleManager.RoleExistsAsync(SD.Role_Employee)) //--If the role does not exist inside db, then it will create
+                    //{
+                    //    await _roleManager.CreateAsync(new IdentityRole(SD.Role_Employee));
+                    //}
 
-                    if (!await _roleManager.RoleExistsAsync(SD.Role_User_Comp)) //--If the role does not exist inside db, then it will create
-                    {
-                        await _roleManager.CreateAsync(new IdentityRole(SD.Role_User_Comp));
-                    }
+                    //if (!await _roleManager.RoleExistsAsync(SD.Role_User_Comp)) //--If the role does not exist inside db, then it will create
+                    //{
+                    //    await _roleManager.CreateAsync(new IdentityRole(SD.Role_User_Comp));
+                    //}
 
-                    if (!await _roleManager.RoleExistsAsync(SD.Role_User_Indi)) //---If the role does not exist inside db, then it will create
-                    {
-                        await _roleManager.CreateAsync(new IdentityRole(SD.Role_User_Indi));
-                    }
+                    //if (!await _roleManager.RoleExistsAsync(SD.Role_User_Indi)) //---If the role does not exist inside db, then it will create
+                    //{
+                    //    await _roleManager.CreateAsync(new IdentityRole(SD.Role_User_Indi));
+                    //}
 
                     //-------By Default Registration (Admin Role)-----------
                     // await _userManager.AddToRoleAsync(user, SD.Role_Admin);
