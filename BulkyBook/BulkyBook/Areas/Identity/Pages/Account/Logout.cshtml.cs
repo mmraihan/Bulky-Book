@@ -32,6 +32,7 @@ namespace BulkyBook.Areas.Identity.Pages.Account
         {
             HttpContext.Session.SetInt32(SD.ssShoppingCart, 0); // shopping cart shows = o
             await _signInManager.SignOutAsync();
+            HttpContext.Session.Remove(SD.ssShoppingCart);
             _logger.LogInformation("User logged out.");
             if (returnUrl != null)
             {

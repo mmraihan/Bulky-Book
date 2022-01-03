@@ -18,7 +18,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-primary border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-danger border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">BulkyBook</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -99,7 +99,7 @@
                         else
                         {
                             <li style="color:white;">
-                                <a href="#" class="nav-link">
+                                <a class="nav-link" asp-area="Identity" asp-page="/Account/Login">
                                     <i class="fas fa-shopping-cart"></i> &nbsp; (0)
                                 </a>
                             </li>
@@ -118,9 +118,10 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-white-50 bg-primary">
-        <div class="container">
-            &copy; 2021 - BulkyBook
+    <footer class="border-top footer text-white-50 bg-danger">
+        <div class="container text-center">
+            &copy; @DateTime.Now.Year
+            <a href="https://mmraihan.github.io/raihan/" class="text-white-50 ">Md.Mubasshir Raihan</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
